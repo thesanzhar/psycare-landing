@@ -1,0 +1,375 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #fafafa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  
+ /* Негізгі стильдер */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #D4EBF1;
+    color: #fff;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.logo a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: #222;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-menu a:hover {
+    color: #555555;
+}
+
+.contact-number a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Мобильді нұсқаға арналған стильдер */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #D4EBF1;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+    }
+
+    .nav-menu.show {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu li {
+        margin: 8px 0;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .contact-number {
+        font-size: 18px; /* Мобильді нұсқадағы өлшем */
+        display: block; /* Мобильді нұсқада да көрсетіледі */
+    }
+}
+
+/* Десктоп нұсқасында контакт нөмірін көрсету */
+@media (min-width: 769px) {
+    .contact-number {
+        display: block; /* Десктопта көрсетіледі */
+    }
+}
+
+  
+  
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  #about {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  
+  #about img {
+    max-width: 400px;
+  }
+  
+  #media ul,
+  #tips ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #media li,
+  #tips li {
+    margin-bottom: 10px;
+  }
+  
+  #questions form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+
+  .button-gray {
+    background-color: #555555;
+    color: #fff;
+    width: 100%;
+    margin-top: 8px;
+  }
+  
+  /* ===== Модал ===== */
+  .modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+  
+  .hidden {
+    display: none;
+  }
+  
+  input[type="text"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* ======= 📱 Адаптивтілік үшін Media Queries ======= */
+  @media (max-width: 768px) {
+    #about {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    section {
+      padding: 20px 10px;
+    }
+  
+    header h1 {
+      font-size: 20px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+    .logo a {
+        width: 50px;
+        height: 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 18px;
+    }
+  
+    section h2 {
+      font-size: 20px;
+    }
+  
+    .modal-content {
+      padding: 20px;
+    }
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    background-color: #D4EBF1;
+  }
+
+  .media ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+  }
+  .media ul li {
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  .media ul li a {
+    display: block;
+    width: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+  }
+
+  .tips {
+    text-align: left;
+  }
+
+  .tips .list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .tips .list .list-item {
+    background-color: #D4EBF1;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+  }
+  .tips .list .list-item h4 {
+    margin: 0;
+  }
+
+  .questions form button {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero, .about {
+        flex-direction: row;
+    }
+    .hero .text,
+    .about .text {
+        text-align: left;
+    }
+    .hero .text h2 {
+        font-size: 36px;
+        line-height: 120%;
+    }
+    .hero img {
+        width: 50%;
+    }
+    .about img {
+        width: 50%;
+        height: 500px;
+        object-fit: contain;
+    }
+    .media ul {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+  }
